@@ -1,0 +1,16 @@
+---
+- name: Vagrant provision playbook
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Install scripts
+      ansible.builtin.template:
+        src: '{{ item }}'
+        dest: /usr/local/sbin/{{ item | ansible.builtin.basename }}
+        owner: root
+        group: root
+        mode: '0755'
+      loop: "{{ lookup('ansible.builtin.fileglob',
+        playbook_dir + '/scripts/*.sh', wantlist=True) }}"
