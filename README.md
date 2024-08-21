@@ -13,10 +13,10 @@
 Под каждое задание был написан отдельный скрипт. Все скрипты лежат в директории [scripts](scripts/):
 
 1. [psax.sh](scripts/psax.sh) - реализация **ps ax**.
-2. [psax.sh](scripts/lsof.sh) - реализация **lsof**.
-3. [psax.sh](scripts/trap.sh) - обработчик сигналов.
-4. [psax.sh](scripts/psax.sh) - тестирование **ionice** с различными планировщиками **IO**.
-5. [psax.sh](scripts/psax.sh) - тестирование **nice**.
+2. [lsof.sh](scripts/lsof.sh) - реализация **lsof**.
+3. [trap.sh](scripts/trap.sh) - обработчик сигналов.
+4. [ionice.sh](scripts/ionice.sh) - тестирование **ionice** с различными планировщиками **IO**.
+5. [nice.sh](scripts/nice.sh) - тестирование **nice**.
 
 Задание сделано на **generic/centos9s** версии **v4.2.12**. После загрузки запускается **Ansible Playbook** [playbook.yml](playbook.yml), который копирует перечисленные скрипты в директорию **/usr/local/sbin/**.
 
